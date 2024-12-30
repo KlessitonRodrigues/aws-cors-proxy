@@ -1,0 +1,49 @@
+{
+  "name": "04-node-template",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "nodemon src/config/localApi.ts",
+    "cdk": "cdk",
+    "cdk:synt": "cdk synthesize",
+    "cdk:deploy": "cdk deploy",
+    "test": "jest",
+    "test-w": "jest --watch",
+    "test-cover": "jest --coverage",
+    "format": "prettier -c -w ./src"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "20.11.30",
+    "aws-cdk": "2.137.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.4.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.137.0",
+    "constructs": "^10.3.0"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "2.137.0",
+    "constructs": "^10.3.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "verbose": true,
+    "roots": [
+      "./src/"
+    ]
+  }
+}
