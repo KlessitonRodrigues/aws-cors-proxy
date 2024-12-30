@@ -1,4 +1,4 @@
-import * as http from 'http';
+import * as https from 'https';
 
 import { Lambdas } from '../../../../@types/lambdas';
 import { createResponse } from '../../../../utils/api/createResponse';
@@ -11,7 +11,7 @@ export const handler: Lambdas.APIHandler = async event => {
     const fetchHTML = (url: string) => {
       return new Promise<string>((resolve, reject) => {
         try {
-          http.get(url, (res: any) => {
+          https.get(url, (res: any) => {
             let rawHtml = '';
             res.on('data', (chunk: any) => (rawHtml += chunk));
             res.on('end', () => resolve(rawHtml));

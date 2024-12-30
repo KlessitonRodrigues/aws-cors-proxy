@@ -8,7 +8,7 @@ import { addCorsPreflight } from '../utils/api/addCors';
 
 export class NodeTemplateStack extends cdk.Stack {
   constructor(scope: cdk.App, props?: cdk.StackProps) {
-    super(scope, 'AcadenutriStack', props);
+    super(scope, 'CorsProxyAPI', props);
 
     const lambdaProps: Lambdas.LambdasProps = {};
 
