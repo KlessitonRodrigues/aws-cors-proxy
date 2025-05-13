@@ -8,7 +8,7 @@ export class CorsProxy extends nodeLambda.NodejsFunction {
   constructor(scope: cdk.Stack, props: Lambdas.LambdasProps) {
     const params: nodeLambda.NodejsFunctionProps = {
       runtime: lambda.Runtime.NODEJS_18_X,
-      timeout: cdk.Duration.seconds(30),
+      timeout: cdk.Duration.seconds(10),
       handler: 'handler',
       entry: __dirname + '/index.ts',
       environment: {
@@ -16,6 +16,7 @@ export class CorsProxy extends nodeLambda.NodejsFunction {
         TOKEN_KEY: props.TOKEN_KEY,
       },
       logRetention: cdk.aws_logs.RetentionDays.THREE_DAYS,
+      reservedConcurrentExecutions: 1,
     };
 
     super(scope, 'CorsProxyLambda', params);
