@@ -20,6 +20,10 @@ const localApi = async () => {
   const routes = localRoutes();
   const port = 3005;
 
+  app.get('/docs', (req, res) => {
+    res.sendFile('../docs/index.html', { root: __dirname });
+  });
+
   app.use(bodyparser.urlencoded({ extended: false }));
   app.use(bodyparser.json());
   app.use(cors());

@@ -9,7 +9,8 @@
     "test": "jest",
     "test-w": "jest --watch",
     "test-cover": "jest --coverage",
-    "format": "prettier -c -w ./src"
+    "format": "prettier -c -w ./src",
+    "build-docs": "redoc-cli bundle -o docs/index.html ./openapi.yaml"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
@@ -26,6 +27,7 @@
     "jest": "^29.7.0",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
+    "redoc-cli": "^0.13.21",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "~5.4.3"
