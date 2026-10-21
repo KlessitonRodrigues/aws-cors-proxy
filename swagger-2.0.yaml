@@ -1,0 +1,38 @@
+swagger: '2.0'
+info:
+  title: Authentication API
+  description: |
+    Swagger 2.0 specification for the authentication-api service
+  version: '1.0.0'
+host: localhost:3000
+basePath: /
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  /:
+    get:
+      tags:
+        - proxy
+      summary: Url proxy
+      description: Proxies the URL provided in the `url` query parameter and returns its HTML content. For example, `localhost:3000?url=google.com`.
+      operationId: proxyUrl
+      produces:
+        - text/html
+      parameters:
+        - name: url
+          in: query
+          description: URL to proxy, such as `google.com`.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response containing the proxied HTML content.
+          schema:
+            type: string
+          examples:
+            text/html: <html>...</html>
